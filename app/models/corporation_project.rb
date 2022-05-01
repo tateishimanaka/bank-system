@@ -1,0 +1,2 @@
+class CorporationProject < ApplicationRecord
+end

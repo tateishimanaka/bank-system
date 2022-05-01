@@ -1,0 +1,2 @@
+class UseOfFund < ApplicationRecord
+end

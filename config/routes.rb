@@ -26,7 +26,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-      root to: "homes#top"
+    root to: "homes#top"
+    resources :collaterals, only: [:index, :create, :edit, :update]
   end
 
 

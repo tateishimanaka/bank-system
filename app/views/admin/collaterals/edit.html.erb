@@ -1,0 +1,9 @@
+<div class="container pt-5 mt-5">
+  <h2>担保編集</h2>
+  <div class="row">
+    <%= form_with model: @collateral, url: admin_collateral_path(@collateral), local:true do |f| %>
+      <%= f.text_field :collateral %>
+      <%= f.submit "更新" %>
+    <% end %>
+  </div>
+</div>

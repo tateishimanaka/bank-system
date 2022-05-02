@@ -1,0 +1,12 @@
+<div class="container pt-5 mt-5">
+  <h1>admin</h1>
+  <% if admin_signed_in? %>
+    <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+    <%= link_to "担保種類新規登録", admin_collaterals_path %>
+  <% else %>
+    <%= link_to "ログイン", new_admin_session_path %>
+  <% end %>
+
+
+
+</div>

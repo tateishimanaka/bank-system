@@ -1,0 +1,16 @@
+<div class="container pt-5 mt-5">
+  <h2>担保種類新規登録画面</h2>
+  <div class="row">
+    <%= form_with model: @collateral, url: admin_collaterals_path, local:true do |f| %>
+      <%= f.text_field :collateral %>
+      <%= f.submit "新規登録" %>
+    <% end %>
+  </div>
+  <div class="row">
+    <% @collaterals.each do |collateral| %>
+      <%= link_to edit_admin_collateral_path(collateral) do %>
+        <%= collateral.id %>.<%= collateral.collateral %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

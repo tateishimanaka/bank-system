@@ -6,4 +6,6 @@ class Store < ApplicationRecord
 
   has_many :corporation_customers, dependent: :destroy
   has_many :individual_customers, dependent: :destroy
+
+  validates :name, presence: true
 end

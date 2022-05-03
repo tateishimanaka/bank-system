@@ -6,6 +6,7 @@ class Store::CorporationCustomersController < ApplicationController
 
   def create
     @corporation_customer = CorporationCustomer.new(corporation_customer_params)
+    @corporation_customer.store_id = current_store.id
     if @corporation_customer.save
       redirect_to store_corporation_customer_path(@corporation_customer)
     else

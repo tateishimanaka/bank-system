@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     root to: "homes#top"
     resources :collaterals, only: [:index, :create, :edit, :update]
     resources :use_of_funds, only: [:index, :create, :edit, :update]
+    resources :fund_types, only: [:index, :create, :edit, :update]
   end
 
 

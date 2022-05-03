@@ -1,0 +1,9 @@
+<div class="container pt-5 mt-5">
+  <h2>運転資金編集</h2>
+  <div class="row">
+    <%= form_with model: @fund_type, url: admin_fund_type_path(@fund_type), local:true do |f| %>
+      <%= f.text_field :fund_type %>
+      <%= f.submit "更新" %>
+    <% end %>
+  </div>
+</div>

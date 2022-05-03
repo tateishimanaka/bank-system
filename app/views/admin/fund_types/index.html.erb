@@ -1,0 +1,19 @@
+<div class="container pt-5 mt-5">
+  <h2>資金種類</h2>
+  <div class="row">
+    <%= link_to "トップページに戻る", admin_root_path %>
+  </div>
+  <div class="row">
+    <%= form_with model: @fund_type, url: admin_fund_types_path, local:true do |f| %>
+      <%= f.text_field :fund_type %>
+      <%= f.submit "新規登録" %>
+    <% end %>
+  </div>
+  <div class="row">
+    <% @fund_types.each do |fund_type| %>
+      <%= link_to edit_admin_fund_type_path(fund_type) do %>
+        <%= fund_type.id %>.<%= fund_type.fund_type %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

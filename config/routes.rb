@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   namespace :store do
     root to: "homes#top"
+    resources :individual_customers, only:[:new, :index, :create, :show, :edit, :update]
+    resources :corporation_customers, only: [:new, :index, :create, :show, :edit, :update]
   end
 
   namespace :admin do

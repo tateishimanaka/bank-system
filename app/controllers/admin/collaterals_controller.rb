@@ -10,7 +10,8 @@ class Admin::CollateralsController < ApplicationController
     if @collateral.save
       redirect_to admin_collaterals_path
     else
-      render :new
+      @collaterals = Collateral.all
+      render :index
     end
   end
 
@@ -18,7 +19,7 @@ class Admin::CollateralsController < ApplicationController
     @collateral = Collateral.find(params[:id])
   end
 
-  def updated_at
+  def update
     @collateral = Collateral.find(params[:id])
     if @collateral.update(collateral_params)
       redirect_to admin_collaterals_path

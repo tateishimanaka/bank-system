@@ -1,0 +1,20 @@
+<div class="container pt-5 mt-5">
+  <h2>資金使途</h2>
+  <div class="row">
+    <%= link_to "トップページに戻る", admin_root_path %>
+  </div>
+  <div class="row">
+    <%= form_with model: @use_of_fund, url: admin_use_of_funds_path, local:true do |f| %>
+      <%= f.text_field :use_of_fund %>
+      <%= f.submit "新規登録" %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <% @use_of_funds.each do |use_of_fund| %>
+      <%= link_to edit_admin_use_of_fund_path(use_of_fund) do %>
+        <%= use_of_fund.id %>.<%= use_of_fund.use_of_fund %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

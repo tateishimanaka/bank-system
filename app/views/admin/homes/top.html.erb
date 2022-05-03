@@ -2,11 +2,16 @@
   <h1>admin</h1>
   <% if admin_signed_in? %>
     <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-    <%= link_to "担保種類新規登録", admin_collaterals_path %>
+
   <% else %>
     <%= link_to "ログイン", new_admin_session_path %>
   <% end %>
 
-
+  <div class="row">
+     <%= link_to "担保種類", admin_collaterals_path %>
+  </div>
+  <div class="row">
+    <%= link_to "資金使途", admin_use_of_funds_path %>
+  </div>
 
 </div>

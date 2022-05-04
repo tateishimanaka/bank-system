@@ -1,0 +1,74 @@
+<div class="container pt-5 mt-5">
+  <h2><%= @corporation_customer.name %></h2>
+  <div class="row">
+    <%= link_to "詳細画面に戻る", store_corporation_customer_path(@corporation_customer) %>
+  </div>
+  <div class="row">
+    <div class="row">
+    <%= form_with model: @corporation_customer, url: store_corporation_customer_path(@corporation_customer), local:true do |f| %>
+      <form>
+        <div class="form-growp mt-3">
+          <label for="name">名前</label><span class="text-danger">(必須)</span>
+          <%= f.text_field :name %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="name_kana">フリガナ</label><span class="text-danger">(必須)</span>
+          <%= f.text_field :name_kana %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="president">代表取締役</label><span class="text-danger">(必須)</span>
+          <%= f.text_field :president %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="president_kana">フリガナ</label><span class="text-danger">(必須)</span>
+          <%= f.text_field :president_kana %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="postal_code">郵便番号</label>
+          <%= f.text_field :postal_code %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="address">住所</label>
+          <%= f.text_field :address %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="telephone_number">電話番号(ハイフンなし)</label>
+          <%= f.text_field :telephone_number %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="president_telephone_number">代表取締役電話番号(ハイフンなし)</label>
+          <%= f.text_field :president_telephone_number %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="president_postal_code">代表取締役　郵便番号</label>
+          <%= f.text_field :president_postal_code %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="president_address">代表取締役　住所</label>
+          <%= f.text_field :president_address %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="category">業種</label>
+          <%= f.text_field :category %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="capital">資本金(千)</label>
+          <%= f.text_field :capital %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="is_active">使用状況</label>
+          <div class="active">
+            <%= f.radio_button :is_active, :true %>
+            <%= f.label :is_active, "営業中", value: true %>
+            <%= f.radio_button :is_active, :false %>
+            <%= f.label :is_active, "営業中止", value: false %>
+          </div>
+        </div>
+        <div class="form-growp mt-5">
+          <%= f.submit "変更する", class: "btn btn-outline-secondary" %>
+        </div>
+      </form>
+    <% end %>
+　</div>
+  </div>
+</div>

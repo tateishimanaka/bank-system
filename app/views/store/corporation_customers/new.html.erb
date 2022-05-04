@@ -1,5 +1,8 @@
 <div class="container pt-5 mt-5">
   <h2>法人顧客　新規登録</h2>
+  <div class="row">
+    <%= link_to "一覧画面", store_corporation_customers_path %>
+  </div>
 　<div class="row">
     <%= form_with model: @corporation_customer, url: store_corporation_customers_path, local:true do |f| %>
       <form>
@@ -55,12 +58,14 @@
           <label for="is_active">使用状況</label>
           <div class="active">
             <%= f.radio_button :is_active, :true %>
-            <%= f.label :is_active, "使用中", value: true %>
+            <%= f.label :is_active, "営業中", value: true %>
             <%= f.radio_button :is_active, :false %>
-            <%= f.label :is_active, "使用停止", value: false %>
+            <%= f.label :is_active, "営業中止", value: false %>
           </div>
         </div>
-        
+        <div class="form-growp mt-5">
+          <%= f.submit "登録する", class: "btn btn-outline-secondary" %>
+        </div>
       </form>
     <% end %>
 　</div>

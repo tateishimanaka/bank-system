@@ -1,0 +1,14 @@
+<div class="container pt-5 mt-5">
+  <h2>法人顧客一覧</h2>
+  <div class="row">
+    <%= link_to "新規登録", new_store_corporation_customer_path %>
+  </div>
+  <div class="row">
+    <% @corporation_customers.each do |corporation_customer| %>
+      <%= link_to store_corporation_customer_path(corporation_customer) do %>
+        <%= corporation_customer.id %>
+        <%= corporation_customer.name %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

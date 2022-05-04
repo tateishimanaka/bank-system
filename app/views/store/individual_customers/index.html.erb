@@ -1,0 +1,14 @@
+<div class="container pt-5 mt-5">
+  <h2>個人顧客一覧</h2>
+  <div class="row">
+    <%= link_to "新規登録", new_store_individual_customer_path %>
+  </div>
+  <div class="row">
+    <% @individual_customers.each do |individual_customer| %>
+      <%= link_to store_individual_customer_path(individual_customer) do %>
+        <%= individual_customer.id %>
+        <%= individual_customer.last_name %><%= individual_customer.first_name %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

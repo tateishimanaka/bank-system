@@ -1,26 +1,26 @@
 <div class="container pt-5 mt-5">
-  <h2>法人顧客　新規登録</h2>
+  <h2>個人顧客　新規登録</h2>
   <div class="row">
-    <%= link_to "一覧画面", store_corporation_customers_path %>
+    <%= link_to "一覧画面", store_individual_customers_path %>
   </div>
 　<div class="row">
-    <%= form_with model: @corporation_customer, url: store_corporation_customers_path, local:true do |f| %>
+    <%= form_with model: @individual_customer, url: store_individual_customers_path, local:true do |f| %>
       <form>
         <div class="form-growp mt-3">
-          <label for="name">名前</label><span class="text-danger">(必須)</span>
-          <%= f.text_field :name %>
+          <label for="last_name">姓</label><span class="text-danger">(必須)</span>
+          <%= f.text_field :last_name %>
         </div>
         <div class="form-growp mt-3">
-          <label for="name_kana">フリガナ</label><span class="text-danger">(必須)</span>
-          <%= f.text_field :name_kana %>
+          <label for="first_name">名</label><span class="text-danger">(必須)</span>
+          <%= f.text_field :first_name %>
         </div>
         <div class="form-growp mt-3">
-          <label for="president">代表取締役</label><span class="text-danger">(必須)</span>
-          <%= f.text_field :president %>
+          <label for="last_name_kana">セイ</label><span class="text-danger">(必須)</span>
+          <%= f.text_field :last_name_kana %>
         </div>
         <div class="form-growp mt-3">
-          <label for="president_kana">フリガナ</label><span class="text-danger">(必須)</span>
-          <%= f.text_field :president_kana %>
+          <label for="first_name_kana">メイ</label><span class="text-danger">(必須)</span>
+          <%= f.text_field :first_name_kana %>
         </div>
         <div class="form-growp mt-3">
           <label for="postal_code">郵便番号</label>
@@ -35,24 +35,16 @@
           <%= f.text_field :telephone_number %>
         </div>
         <div class="form-growp mt-3">
-          <label for="president_telephone_number">代表取締役電話番号(ハイフンなし)</label>
-          <%= f.text_field :president_telephone_number %>
+          <label for="business">職業</label>
+          <%= f.text_field :business %>
         </div>
         <div class="form-growp mt-3">
-          <label for="president_postal_code">代表取締役　郵便番号</label>
-          <%= f.text_field :president_postal_code %>
+          <label for="yearly_income">年収(千)</label>
+          <%= f.text_field :yearly_income %>
         </div>
         <div class="form-growp mt-3">
-          <label for="president_address">代表取締役　住所</label>
-          <%= f.text_field :president_address %>
-        </div>
-        <div class="form-growp mt-3">
-          <label for="category">業種</label>
-          <%= f.text_field :category %>
-        </div>
-        <div class="form-growp mt-3">
-          <label for="capital">資本金(千)</label>
-          <%= f.text_field :capital %>
+          <label for="birthday">誕生日(****/**/**)</label>
+          <%= f.text_field :birthday %>
         </div>
         <div class="form-growp mt-3">
           <label for="is_active">融資有無</label>

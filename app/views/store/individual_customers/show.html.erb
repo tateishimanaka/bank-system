@@ -1,0 +1,12 @@
+<div class="container pt-5 mt-5">
+  <div class="row">
+    <%= link_to "一覧画面", store_individual_customers_path %>
+  </div>
+  <h2><%= @individual_customer.last_name %></h2>
+  <div class="row">
+    <%= @individual_customer.first_name %>
+  </div>
+  <div class="row">
+    <%= link_to "変更する", edit_store_individual_customer_path(@individual_customer) %>
+  </div>
+</div>

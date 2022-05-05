@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   scope module: :user do
     root to: "homes#top"
     resources :stores, only: [:show] do
-      resources :corporation_customers, only: [:index, :show]
+      resources :corporation_customers, only: [:index, :show] do
+        resources :corporation_projects, only: [:new, :create, :show]
+      end
       resources :individual_customers, only: [:index, :show]
     end
   end

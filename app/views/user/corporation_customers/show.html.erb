@@ -1,9 +1,9 @@
 <div class="container pt-5 mt-5">
   <h2><%= @corporation_customer.name %></h2>
   <div class="row">
-    <%= link_to "法人顧客一覧に戻る", store_corporation_customers_path(@store) %>
+    <%= link_to "法人顧客一覧に戻る", corporation_customers_path %>
   </div>
   <div class="row">
-    <%= link_to "案件作成", new_store_corporation_customer_corporation_project_path(@store, @corporation_customer) %>
+    <%= link_to "案件作成", corporation_customer_corporation_project_new_path(@corporation_customer) %>
   </div>
 </div>

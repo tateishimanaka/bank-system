@@ -19,13 +19,17 @@ Rails.application.routes.draw do
 
   scope module: :user do
     root to: "homes#top"
-    resources :stores, only: [:show] do
-      resources :corporation_customers, only: [:index, :show] do
-        resources :corporation_projects, only: [:new, :create, :edit, :update]
-        get 'corporation_projects/id' => 'coporation_projects#show'
-      end
-      resources :individual_customers, only: [:index, :show]
+    # resources :stores, only: [:show] do
+    resources :corporation_customers, only: [:index, :show] do
+      get 'corporation_projects/new' => 'corporation_project#new', as: 'corporation_project_new'
+      post 'corporation_projects' => 'corporation_projects#create', as: 'corporation_project_create'
+      get 'corporation_projects/:id' => 'corporation_projects#show', as: 'corporation_project_show'
+      get 'corporation_projects/edit/:id' => 'corporation_projects#edit', as: 'corporation_project_edit'
+      patch 'corporation_projects/:id' => 'corporation_projects#update', as: 'corporation_project_update'
+      # resources :corporation_projects, only: [:new, :create, :show, :edit, :update]
     end
+
+    resources :individual_customers, only: [:index, :show]
   end
 
   namespace :store do
@@ -51,6 +55,4 @@ Rails.application.routes.draw do
     resources :use_of_funds, only: [:index, :create, :edit, :update]
     resources :fund_types, only: [:index, :create, :edit, :update]
   end
-
-
 end

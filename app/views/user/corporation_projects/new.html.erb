@@ -1,7 +1,7 @@
 <div class="container pt-5 mt-5">
   <h2><%= @corporation_customer.name %></h2>
   <div class="row">
-    <%= form_with(model:[@corporation_project, @store, @corporation_customer], url: store_corporation_customer_corporation_projects_path(@store, @corporation_customer), local:true) do |f| %>
+    <%= form_with(model:[@corporation_project, @corporation_customer], url: corporation_customer_corporation_project_create_path(@corporation_customer), local:true) do |f| %>
       <form>
         <div class="form-growp mt-3">
           <label for="loan">融資額</label>

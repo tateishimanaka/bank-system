@@ -1,5 +1,7 @@
 class User::HomesController < ApplicationController
+
   def top
-    @stores = Store.all
+    @corporation_customers = CorporationCustomer.all
   end
+
 end

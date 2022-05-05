@@ -6,5 +6,7 @@ class User::CorporationCustomersController < ApplicationController
   end
 
   def show
+    @store = Store.find(params[:store_id])
+    @corporation_customer = CorporationCustomer.find(params[:id])
   end
 end

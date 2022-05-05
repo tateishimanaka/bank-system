@@ -8,14 +8,14 @@ class Store::IndividualCustomersController < ApplicationController
     @individual_customer = IndividualCustomer.new(individual_customer_params)
     @individual_customer.store_id = current_store.id
     if @individual_customer.save
-      redirect_to store_individual_customer_path(@individual_customer)
+      redirect_to store_individual_customer_show_path(@individual_customer)
     else
       render :new
     end
   end
 
   def index
-    @individual_customers = IndividualCustomer.all
+    @individual_customers = current_store.individual_customers
   end
 
   def show
@@ -29,7 +29,7 @@ class Store::IndividualCustomersController < ApplicationController
   def update
     @individual_customer = IndividualCustomer.find(params[:id])
     if @individual_customer.update(individual_customer_params)
-      redirect_to store_individual_customer_path(@individual_customer)
+      redirect_to store_individual_customer_show_path(@individual_customer)
     else
       render :edit
     end

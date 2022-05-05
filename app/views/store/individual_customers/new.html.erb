@@ -1,10 +1,10 @@
 <div class="container pt-5 mt-5">
   <h2>個人顧客　新規登録</h2>
   <div class="row">
-    <%= link_to "一覧画面", store_individual_customers_path %>
+    <%= link_to "一覧画面", store_individual_customers_index_path %>
   </div>
 　<div class="row">
-    <%= form_with model: @individual_customer, url: store_individual_customers_path, local:true do |f| %>
+    <%= form_with model: @individual_customer, url: store_individual_customer_create_path, local:true do |f| %>
       <form>
         <div class="form-growp mt-3">
           <label for="last_name">姓</label><span class="text-danger">(必須)</span>

@@ -1,12 +1,12 @@
 <div class="container pt-5 mt-5">
   <div class="row">
-    <%= link_to "一覧画面", store_corporation_customers_path %>
+    <%= link_to "一覧画面", store_corporation_customers_index_path %>
   </div>
   <h2><%= @corporation_customer.name %></h2>
   <div class="row">
     <%= @corporation_customer.name_kana %>
   </div>
   <div class="row">
-    <%= link_to "変更する", edit_store_corporation_customer_path(@corporation_customer) %>
+    <%= link_to "変更する", store_corporation_customer_edit_path(@corporation_customer) %>
   </div>
 </div>

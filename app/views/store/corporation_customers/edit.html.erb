@@ -1,11 +1,11 @@
 <div class="container pt-5 mt-5">
   <h2><%= @corporation_customer.name %></h2>
   <div class="row">
-    <%= link_to "詳細画面に戻る", store_corporation_customer_path(@corporation_customer) %>
+    <%= link_to "詳細画面に戻る", store_corporation_customer_show_path(@corporation_customer) %>
   </div>
   <div class="row">
     <div class="row">
-    <%= form_with model: @corporation_customer, url: store_corporation_customer_path(@corporation_customer), local:true do |f| %>
+    <%= form_with model: @corporation_customer, url: store_corporation_customer_update_path(@corporation_customer), local:true do |f| %>
       <form>
         <div class="form-growp mt-3">
           <label for="name">名前</label><span class="text-danger">(必須)</span>

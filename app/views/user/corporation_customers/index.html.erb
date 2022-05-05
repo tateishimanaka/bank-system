@@ -4,7 +4,9 @@
   </div>
   <div class="row">
     <% @corporation_customers.each do |corporation_customer| %>
-      <%= corporation_customer.name %>
+      <%= link_to store_corporation_customer_path(corporation_customer.store, corporation_customer) do %>
+        <%= corporation_customer.name %>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -21,7 +21,8 @@ Rails.application.routes.draw do
     root to: "homes#top"
     resources :stores, only: [:show] do
       resources :corporation_customers, only: [:index, :show] do
-        resources :corporation_projects, only: [:new, :create, :show]
+        resources :corporation_projects, only: [:new, :create, :edit, :update]
+        get 'corporation_projects/id' => 'coporation_projects#show'
       end
       resources :individual_customers, only: [:index, :show]
     end
@@ -35,7 +36,7 @@ Rails.application.routes.draw do
     get 'corporation_customers/:id' => 'corporation_customers#show', as: 'corporation_customer_show'
     get 'corporation_customers/edit/:id' => 'corporation_customers#edit', as: 'corporation_customer_edit'
     patch 'corporation_customers/:id' => 'corporation_customers#update', as: 'corporation_customer_update'
-    
+
     post 'individual_customers' => 'individual_customers#create', as: 'individual_customer_create'
     get 'individual_customers' => 'individual_customers#index', as: 'individual_customers_index'
     get 'individual_customers/new' => 'individual_customers#new', as: 'individual_customer_new'

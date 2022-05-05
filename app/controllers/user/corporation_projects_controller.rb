@@ -1,6 +1,8 @@
 class User::CorporationProjectsController < ApplicationController
 
   def new
+    @store = Store.find(params[:store_id])
+    @corporation_customer = CorporationCustomer.find(params[:corporation_customer_id])
     @corporation_project = CorporationProject.new
   end
 
@@ -10,10 +12,13 @@ class User::CorporationProjectsController < ApplicationController
     @corporation_project.user_id = current_user.id
     @corporation_project = CorporationProject.new(corporation_project_params)
     @corporation_project.save
-    redirect_to store_corporation_customer_corporation_project_path(@store, @corporation_customer)
+    redirect_to store_corporation_customer_corporation_projects_id_path(@store, @corporation_customer, @corporation_project)
   end
 
   def show
+    @store = Store.find(params[:store_id])
+    @corporation_customer = CorporationCustomer.find(params[:corporation_customer_id])
+    @corporation_project = CorporationProject.find(params[:id])
   end
 
   private

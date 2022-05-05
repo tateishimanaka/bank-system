@@ -1,3 +1,73 @@
 <div class="container pt-5 mt-5">
-  
+  <h2><%= @corporation_customer.name %></h2>
+  <div class="row">
+    <%= form_with(model:[@corporation_project, @store, @corporation_customer], url: store_corporation_customer_corporation_projects_path(@store, @corporation_customer), local:true) do |f| %>
+      <form>
+        <div class="form-growp mt-3">
+          <label for="loan">融資額</label>
+          <%= f.text_field :loan %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="span">期間</label>
+          <%= f.text_field :span %>ヶ月
+        </div>
+        <div class="form-growp mt-3">
+          <label for="month_payment">毎月返済額</label>
+          <%= f.text_field :month_payment %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="last_mont_payment">最終月返済額</label>
+          <%= f.text_field :last_mont_payment %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="interest_rate">金利</label>
+          <%= f.text_field :interest_rate %>％
+        </div>
+        <div class="form-growp mt-3">
+          <label for="joint_guarantor">連帯保証人</label>
+          <%= f.text_field :joint_guarantor %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="own_resourcer">自己資金</label>
+          <%= f.text_field :own_resource %>千円
+        </div>
+        <div class="form-growp mt-3">
+          <label for="collateral">担保</label>
+          <%= f.collection_select :collateral_id, Collateral.all, :id, :collateral, prompt:"選択して下さい" %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="use_of_fund">資金使途</label>
+          <%= f.collection_select :use_of_fund_id, UseOfFund.all, :id, :use_of_fund, prompt:"選択して下さい" %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="fund_type">資金種類</label>
+          <%= f.collection_select :fund_type_id, FundType.all, :id, :fund_type, prompt:"選択して下さい" %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="end_day">期日(****/**/**)</label>
+          <%= f.text_field :end_day %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="date">実行日(****/**/**)</label>
+          <%= f.text_field :date %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="appoint_date">実行日予定日(****/**/**)</label>
+          <%= f.text_field :appoint_date %>
+        </div>
+        <div class="form-growp mt-3">
+          <label for="is_active">完済登録</label>
+          <div class="active">
+            <%= f.radio_button :is_active, :true %>
+            <%= f.label :is_active, "有効", value: true %>
+            <%= f.radio_button :is_active, :false %>
+            <%= f.label :is_active, "完済", value: false %>
+          </div>
+        </div>
+        <div class="form-growp mt-5">
+          <%= f.submit "登録する", class: "btn btn-outline-secondary" %>
+        </div>
+      </form>
+    <% end %>
+  </div>
 </div>
